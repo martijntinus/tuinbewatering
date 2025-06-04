@@ -1,0 +1,13 @@
+alias: Reactie op bewateringsmelding
+trigger:
+  - platform: event
+    event_type: mobile_app_notification_action
+    event_data:
+      action: START_BEWATERING
+
+action:
+  - service: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.start_bewatering
+
+mode: single
