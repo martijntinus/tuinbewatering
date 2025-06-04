@@ -1,0 +1,59 @@
+type: vertical-stack
+cards:
+  - type: entities
+    title: 🌱 Status bewatering
+    entities:
+      - entity: sensor.zolderplant_soil_moisture
+        name: Bodemvocht
+      - entity: sensor.regen_1d
+        name: Verwachte regen (1d)
+      - entity: sensor.regen_2d
+        name: Verwachte regen (2d)
+      - entity: sensor.regen_laatste_24u
+        name: Regen laatste 24u
+      - entity: sensor.beneden_airco_outdoor
+        name: Buitentemperatuur
+      - entity: sensor.knmi_luchtvochtigheid
+        name: Luchtvochtigheid
+      - entity: sensor.zonkans_1d
+        name: Zonkans (vandaag)
+  - type: entities
+    title: 🔧 Instellingen
+    entities:
+      - entity: input_boolean.bewatering_toestaan
+        name: Bewatering toegestaan?
+      - entity: input_boolean.start_bewatering
+        name: Start bewatering om 22:30?
+  - type: conditional
+    conditions:
+      - entity: input_boolean.start_bewatering
+        state: "on"
+      - condition: state
+        entity: input_boolean.bewatering_toestaan
+        state: "on"
+    card:
+      type: markdown
+      content: |
+        ✅ De tuin wordt automatisch bewaterd om 22:30.
+  - type: conditional
+    conditions:
+      - condition: or
+        conditions:
+          - condition: state
+            entity: input_boolean.bewatering_toestaan
+            state: "off"
+          - condition: state
+            entity: input_boolean.start_bewatering
+            state: "off"
+    card:
+      type: markdown
+      content: |
+        ℹ️ Bewatering staat **uit**. Geen actie gepland.
+  - type: button
+    name: Handmatig starten
+    icon: mdi:water-pump
+    tap_action:
+      action: call-service
+      service: switch.turn_on
+      target:
+        entity_id: switch.water2
