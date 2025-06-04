@@ -38,3 +38,5 @@ Gebruik het dashboard of zet `input_boolean.start_bewatering` aan om het systeem
 
 ## 📄 Licentie
 MIT – gebruik en deel vrij, graag met naamsvermelding als je het uitbreidt.
+
+## Dit project is voor een deel gemaakt met ChatGPT.
