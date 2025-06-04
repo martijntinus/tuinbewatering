@@ -1,0 +1,34 @@
+alias: Bewateringsadvies om 22u (met actieknoppen)
+trigger:
+  - platform: time
+    at: "22:00:00"
+
+condition:
+  - condition: state
+    entity_id: input_boolean.bewatering_toestaan
+    state: 'on'
+  - condition: numeric_state
+    entity_id: sensor.grondvocht
+    below: 30
+  - condition: numeric_state
+    entity_id: sensor.regen_1d
+    below: 2
+  - condition: numeric_state
+    entity_id: sensor.regen_2d
+    below: 2
+  - condition: numeric_state
+    entity_id: sensor.regen_laatste_24u
+    below: 2
+
+action:
+  - service: notify.mobile_app_iphone_martijn
+    data:
+      title: "💧 Bewatering aanbevolen"
+      message: "De grond is droog en er wordt weinig regen verwacht. Wil je morgen bewateren?"
+      data:
+        actions:
+          - action: START_BEWATERING
+            title: "✅ Ja, starten"
+          - action: IGNORE_BEWATERING
+            title: "❌ Nee, laat maar"
+mode: single
