@@ -1,0 +1,20 @@
+alias: Start bewatering na bevestiging
+trigger:
+  - platform: time
+    at: "05:00:00"
+condition:
+  - condition: state
+    entity_id: input_boolean.start_bewatering
+    state: 'on'
+action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.water2
+  - delay: "00:10:00"
+  - service: switch.turn_off
+    target:
+      entity_id: switch.water2
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.start_bewatering
+mode: single
