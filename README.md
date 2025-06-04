@@ -1,6 +1,3 @@
-# tuinbewatering
-voor het slim bewateren van de tuin
-
 # 💧 Slimme Tuinbewatering met Home Assistant
 
 Een Home Assistant project dat automatisch bepaalt of je tuin bewaterd moet worden op basis van bodemvocht, weersverwachting en regenhistorie. Je krijgt elke avond een melding om te kiezen of je de volgende ochtend wilt bewateren.
