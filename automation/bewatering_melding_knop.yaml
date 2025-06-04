@@ -21,7 +21,7 @@ condition:
     below: 2
 
 action:
-  - service: notify.mobile_app_iphone_martijn
+  - service: notify.mobile_app_iphone_naam
     data:
       title: "💧 Bewatering aanbevolen"
       message: "De grond is droog en er wordt weinig regen verwacht. Wil je morgen bewateren?"
