@@ -12,7 +12,7 @@ Een Home Assistant project dat automatisch bepaalt of je tuin bewaterd moet word
 ## 📁 Inhoud
 
 - `automation/` – bevat de automatiseringen
-- `input_boolean.yaml` – helpers
+- `helpers.yaml` – helpers
 - `lovelace/dashboard.yaml` – dashboardconfiguratie
 
 ## 📲 Benodigdheden
