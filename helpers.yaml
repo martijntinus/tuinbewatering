@@ -1,0 +1,23 @@
+input_boolean:
+  bewatering_toestaan:
+    name: Bewatering toestaan
+    icon: mdi:check-circle
+
+  start_bewatering:
+    name: Start bewatering
+    icon: mdi:watering-can
+
+##optioneel:
+template:
+  - sensor:
+      - name: "Bewateringsadvies"
+        state: >
+          {% if is_state('input_boolean.bewatering_toestaan', 'on') and
+                states('sensor.grondvocht') | float < 30 and
+                states('sensor.regen_1d') | float < 2 and
+                states('sensor.regen_2d') | float < 2 and
+                states('sensor.regen_laatste_24u') | float < 2 %}
+              Ja, de tuin is droog en er wordt weinig regen verwacht. Bewatering is aanbevolen.
+          {% else %}
+              Nee, er is genoeg vocht of regen. Bewatering is niet nodig.
+          {% endif %}

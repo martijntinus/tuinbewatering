@@ -1,8 +1,0 @@
-input_boolean:
-  bewatering_toestaan:
-    name: Bewatering toestaan
-    icon: mdi:check-circle
-
-  start_bewatering:
-    name: Start bewatering
-    icon: mdi:watering-can
