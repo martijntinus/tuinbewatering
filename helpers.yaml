@@ -21,3 +21,14 @@ template:
           {% else %}
               Nee, er is genoeg vocht of regen. Bewatering is niet nodig.
           {% endif %}
+        icon: >
+          {% if is_state('input_boolean.bewatering_toestaan', 'on') and
+                states('sensor.grondvocht') | float < 30 and
+                states('sensor.regen_1d') | float < 2 and
+                states('sensor.regen_2d') | float < 2 and
+                states('sensor.regen_laatste_24u') | float < 2 %}
+              mdi:water
+          {% else %}
+              mdi:flower
+          {% endif %}
+
