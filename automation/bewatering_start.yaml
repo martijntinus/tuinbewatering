@@ -10,7 +10,8 @@ action:
   - service: switch.turn_on
     target:
       entity_id: switch.water2
-  - delay: "00:10:00"
+ - delay:
+      minutes: "{{ states('input_number.bewatering_duur') | int }}"
   - service: switch.turn_off
     target:
       entity_id: switch.water2
