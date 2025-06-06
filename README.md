@@ -29,12 +29,14 @@ Een Home Assistant project dat automatisch bepaalt of je tuin bewaterd moet word
 2. Voeg de automatiseringen toe via de GUI of als YAML
 3. Importeer het dashboard
 4. Zet `input_boolean.bewatering_toestaan` aan
+5. Pas je timer aan naar de gewenste bewateringstijd.
 
 ## 🧪 Test
 Gebruik het dashboard of zet `input_boolean.start_bewatering` aan om het systeem te testen.
 
 ## ✅ Voorbeeld screenshot
-![image](https://github.com/user-attachments/assets/df4c43fd-92df-4eab-b675-934be9be6753)
+![image](https://github.com/user-attachments/assets/89ef32d3-c952-4ecf-9adb-384154b91831)
+
 
 ## 📄 Licentie
 MIT – gebruik en deel vrij, graag met naamsvermelding als je het uitbreidt.
