@@ -13,7 +13,7 @@ cards:
         name: Regen laatste 24u
       - entity: sensor.beneden_airco_outdoor
         name: Buitentemperatuur
-      - entity: sensor.knmi_luchtvochtigheid
+      - entity: sensor.luchtvochtigheid
         name: Luchtvochtigheid
       - entity: sensor.zonkans_1d
         name: Zonkans (vandaag)
