@@ -19,6 +19,7 @@ Een Home Assistant project dat automatisch bepaalt of je tuin bewaterd moet word
 
 - Home Assistant
 - Buienradar integratie
+  https://www.home-assistant.io/integrations/buienradar
 - KNMI intergratie (kan ook overgezet worden naar Buienradar)
 - Vocht- en temperatuursensor
 - Slim waterklep (`switch.water2`)
