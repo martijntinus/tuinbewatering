@@ -6,6 +6,16 @@ input_boolean:
   start_bewatering:
     name: Start bewatering
     icon: mdi:watering-can
+    
+input_number:
+  bewatering_duur:
+    name: Duur bewatering
+    icon: mdi:timer
+    min: 1
+    max: 60
+    step: 1
+    unit_of_measurement: "min"
+    mode: box
 
 ##optioneel:
 template:
